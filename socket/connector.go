@@ -1,8 +1,8 @@
 package socket
 
 import (
-	"github.com/davyxu/cellnet"
-	"github.com/davyxu/cellnet/extend"
+	"cellnet"
+	"cellnet/extend"
 	"net"
 	"time"
 )

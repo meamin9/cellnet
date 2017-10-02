@@ -6,7 +6,7 @@ package gamedef
 import (
 	"reflect"
 
-	"github.com/davyxu/cellnet/codec/sproto"
+	"cellnet/codec/sproto"
 )
 
 type TestEchoACK struct {

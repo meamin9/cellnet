@@ -3,13 +3,13 @@ package tests
 import (
 	"testing"
 
-	"github.com/davyxu/cellnet"
-	_ "github.com/davyxu/cellnet/codec/pb"                     // 启用pb编码
-	"github.com/davyxu/cellnet/proto/binary/coredef"           // 底层系统事件
-	jsongamedef "github.com/davyxu/cellnet/proto/json/gamedef" // json逻辑协议
-	"github.com/davyxu/cellnet/proto/pb/gamedef"               // pb逻辑协议
-	"github.com/davyxu/cellnet/socket"
-	"github.com/davyxu/cellnet/util"
+	"cellnet"
+	_ "cellnet/codec/pb"                     // 启用pb编码
+	"cellnet/proto/binary/coredef"           // 底层系统事件
+	jsongamedef "cellnet/proto/json/gamedef" // json逻辑协议
+	"cellnet/proto/pb/gamedef"               // pb逻辑协议
+	"cellnet/socket"
+	"cellnet/util"
 )
 
 var echoSignal *util.SignalTester

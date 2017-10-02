@@ -3,12 +3,12 @@ package tests
 import (
 	"testing"
 
-	"github.com/davyxu/cellnet"
-	_ "github.com/davyxu/cellnet/codec/pb" // 启用pb编码
-	"github.com/davyxu/cellnet/proto/binary/coredef"
-	"github.com/davyxu/cellnet/proto/pb/gamedef"
-	"github.com/davyxu/cellnet/socket"
-	"github.com/davyxu/cellnet/util"
+	"cellnet"
+	_ "cellnet/codec/pb" // 启用pb编码
+	"cellnet/proto/binary/coredef"
+	"cellnet/proto/pb/gamedef"
+	"cellnet/socket"
+	"cellnet/util"
 )
 
 var signal *util.SignalTester

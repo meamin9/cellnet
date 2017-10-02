@@ -3,7 +3,7 @@ package rpc
 import (
 	"reflect"
 
-	"github.com/davyxu/cellnet"
+	"cellnet"
 )
 
 type ReflectCallHandler struct {

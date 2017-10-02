@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/davyxu/cellnet"
-	"github.com/davyxu/cellnet/extend"
+	"cellnet"
+	"cellnet/extend"
 	"github.com/gorilla/websocket"
 )
 

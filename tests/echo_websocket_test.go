@@ -1,10 +1,10 @@
 package tests
 
 import (
-	"github.com/davyxu/cellnet"
-	jsongamedef "github.com/davyxu/cellnet/proto/json/gamedef" // json逻辑协议
-	"github.com/davyxu/cellnet/util"
-	"github.com/davyxu/cellnet/websocket"
+	"cellnet"
+	jsongamedef "cellnet/proto/json/gamedef" // json逻辑协议
+	"cellnet/util"
+	"cellnet/websocket"
 	"testing"
 )
 

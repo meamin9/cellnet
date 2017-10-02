@@ -3,8 +3,8 @@ package socket
 import (
 	"net"
 
-	"github.com/davyxu/cellnet"
-	"github.com/davyxu/cellnet/extend"
+	"cellnet"
+	"cellnet/extend"
 )
 
 type socketAcceptor struct {

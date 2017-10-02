@@ -1,8 +1,8 @@
 package extend
 
 import (
-	"github.com/davyxu/cellnet"
-	"github.com/davyxu/cellnet/proto/binary/coredef"
+	"cellnet"
+	"cellnet/proto/binary/coredef"
 )
 
 var (

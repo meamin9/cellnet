@@ -4,12 +4,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/davyxu/cellnet"
-	"github.com/davyxu/cellnet/benchmark"
-	_ "github.com/davyxu/cellnet/codec/pb" // 启用pb编码
-	"github.com/davyxu/cellnet/proto/pb/gamedef"
-	"github.com/davyxu/cellnet/socket"
-	"github.com/davyxu/cellnet/util"
+	"cellnet"
+	"cellnet/benchmark"
+	_ "cellnet/codec/pb" // 启用pb编码
+	"cellnet/proto/pb/gamedef"
+	"cellnet/socket"
+	"cellnet/util"
 	"github.com/davyxu/golog"
 )
 
