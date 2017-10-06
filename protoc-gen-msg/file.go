@@ -78,9 +78,11 @@ func printFile(pool *pbmeta.DescriptorPool) (string, bool) {
 	}
 
 	var model fileModel
-	model.PackageName = pool.File(0).PackageName()
+	// only use the last file to msgid
+	count := pool.FileCount() - 1
+	model.PackageName = pool.File(count).PackageName()
 
-	for f := 0; f < pool.FileCount(); f++ {
+	for f := count; f < pool.FileCount(); f++ {
 
 		file := pool.File(f)
 
@@ -100,7 +102,6 @@ func printFile(pool *pbmeta.DescriptorPool) (string, bool) {
 		}
 
 		model.TotalMessages += file.MessageCount()
-
 		model.Protos = append(model.Protos, pm)
 
 	}

@@ -31,8 +31,17 @@ func RegisterMessage(p Peer, msgName string, userCallback func(*Event)) *Registe
 	return RegisterHandler(p, msgName, NewCallbackHandler(userCallback))
 }
 
+func RegisterMessageToQueue(p Peer, queue EventQueue, msgName string, userCallback func(*Event)) *RegisterMessageContext {
+	return RegisterHandlerToQueue(p, queue, msgName, NewCallbackHandler(userCallback))
+
+}
+
 // 注册消息处理的一系列Handler, 当有队列时, 投放到队列
 func RegisterHandler(p Peer, msgName string, handlers ...EventHandler) *RegisterMessageContext {
+	return RegisterHandlerToQueue(p, p.Queue(), msgName, handlers...)
+}
+
+func RegisterHandlerToQueue(p Peer, queue EventQueue, msgName string, handlers ...EventHandler) *RegisterMessageContext {
 
 	if p == nil {
 		return nil
@@ -44,12 +53,12 @@ func RegisterHandler(p Peer, msgName string, handlers ...EventHandler) *Register
 		panic(fmt.Sprintf("message register failed, name not found: %s", msgName))
 	}
 
-	if p.Queue() != nil {
+	if queue != nil {
 
 		p.AddChainRecv(NewHandlerChain(
 			NewMatchMsgIDHandler(meta.ID),
 			StaticDecodePacketHandler(),
-			NewQueuePostHandler(p.Queue(), handlers...),
+			NewQueuePostHandler(queue, handlers...),
 		))
 	} else {
 
