@@ -14,6 +14,7 @@ type EventQueue interface {
 
 	// 投递事件, 通过队列到达消费者端
 	Post(callback func())
+	Poll()
 }
 
 type evQueue struct {
@@ -65,6 +66,18 @@ func (self *evQueue) StartLoop() {
 
 func (self *evQueue) StopLoop(result int) {
 	self.exitSignal <- result
+}
+
+func (self *evQueue) Poll() {
+Loop:
+	for {
+		select {
+		case callback := <-self.queue:
+			self.protectedCall(callback)
+		default:
+			break Loop
+		}
+	}
 }
 
 func (self *evQueue) Wait() int {
